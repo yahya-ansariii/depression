@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Text Classification</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Text Classification</h1>
+    <form method="POST" action="/predict">
+      <textarea name="text" rows="4" cols="50" placeholder="Enter text for classification..."></textarea>
+      <br><br>
+      <input type="submit" value="Classify">
+    </form>
+    <br><br>
+    <div id="result">
+      {% if text and result %}
+        <p><strong>Input Text:</strong> <span id="input-text">{{ text }}</span></p>
+        <p><strong>Classification Result (is_depressed?):</strong> <span id="classification-result">{{ result }}</span></p>
+      {% endif %}
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
